@@ -12,3 +12,5 @@ The repo provides some ROS2 cheat-sheet.
 * [06. Component](06.Component)
 * [07. LifeCycle](07.LifeCycle)
 * [08. Parameter](08.Parameter): TODO
+* [09. Timer](09.Timer): TODO
+* [10. QoS](10.QoS): TODO
