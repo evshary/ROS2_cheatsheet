@@ -14,3 +14,12 @@ The repo provides some ROS2 cheat-sheet.
 * [08. Parameter](08.Parameter): TODO
 * [09. Timer](09.Timer): TODO
 * [10. QoS](10.QoS): TODO
+
+# Reference
+
+* [Discourse](https://discourse.ros.org/): The forum for ROS
+* [ROS packages](https://index.ros.org/packages/): Packages list for ROS
+* [ROS2 wiki](https://index.ros.org/doc/ros2/): Wiki for ROS2
+* [ROS 2 Overview](http://docs.ros2.org/dashing/): Documentation for developers
+* [ROS 2 Design](https://design.ros2.org/): The design behind ROS2
+* [ROS 2 Demo Code](https://github.com/ros2/demos): Demo Code for ROS2
