@@ -7,6 +7,7 @@
   - Also show type: `ros2 service list -t`
 * Service call
   - `ros2 service call <service_name> <service_type> <arguments>`
+  - EX: `ros2 service call /service_name example_interfaces/ServiceType "{a: 1, b: 2}"`
 
 ## C++
 
