@@ -14,7 +14,7 @@
 ```sh
 ros2 pkg create --build-type ament_cmake cpp_service_client
 ```
-* Add lifecycle_talker.cpp
+* Add add_two_ints_client.cpp, add_two_ints_server.cpp
 * Add launch file
 * Modify CMakeLists.txt: find_package, add_library, target_compile_definitions, ament_target_dependencies, rclcpp_components_register_node, install
 * Build and run
