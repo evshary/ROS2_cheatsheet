@@ -15,15 +15,17 @@
 ```sh
 ros2 pkg create --build-type ament_cmake cpp_service_client
 ```
-* Add add_two_ints_client.cpp, add_two_ints_server.cpp
+* Add example_client.cpp, example_server.cpp
+* Add interface files
 * Add launch file
 * Modify CMakeLists.txt: find_package, add_library, target_compile_definitions, ament_target_dependencies, rclcpp_components_register_node, install
+* Add build_depend and exec_depend in package.xml
 * Build and run
 ```sh
 colcon build --packages-select cpp_service_client
 source install/local_setup.bash
-ros2 run cpp_service_client add_two_ints_server
-ros2 run cpp_service_client add_two_ints_client
+ros2 run cpp_service_client example_server
+ros2 run cpp_service_client example_client
 ```
 
 ## Python
