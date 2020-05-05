@@ -9,6 +9,9 @@
   - `ros2 service call <service_name> <service_type> <arguments>`
   - EX: `ros2 service call /service_name example_interfaces/ServiceType "{a: 1, b: 2}"`
 
+## Tips
+* If you want to use the interface generated in the current project, please use `rosidl_target_interfaces`.
+
 ## C++
 
 * Create package
