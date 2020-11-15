@@ -20,6 +20,9 @@ class MinimalPublisher : public rclcpp::Node
 #define QOS_HISTORY      1
 #define QOS_RELIABILITY  1
 #define QOS_DURABILITY   1
+#define QOS_DEADLINE     1
+#define QOS_LIFESPAN     1
+#define QOS_LIVELINESS   1
 #if QOS_HISTORY
       // History
       qos_settings.keep_last(10);
@@ -37,8 +40,10 @@ class MinimalPublisher : public rclcpp::Node
       qos_settings.deadline(std::chrono::milliseconds(2000));
 #endif
 #if QOS_LIFESPAN
+      qos_settings.lifespan(std::chrono::milliseconds(2000));
 #endif
 #if QOS_LIVELINESS
+      qos_settings.liveliness_lease_duration(std::chrono::milliseconds(2000));
 #endif
 
       publisher_ = this->create_publisher<std_msgs::msg::String>("topic", qos_settings);
