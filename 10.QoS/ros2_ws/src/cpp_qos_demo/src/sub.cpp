@@ -38,11 +38,23 @@ class MinimalSubscriber : public rclcpp::Node
       qos_settings.lifespan(std::chrono::milliseconds(2000));
 #endif
 #if QOS_LIVELINESS
+      qos_settings.liveliness(RMW_QOS_POLICY_LIVELINESS_MANUAL_BY_TOPIC);
       qos_settings.liveliness_lease_duration(std::chrono::milliseconds(2000));
+
+      rclcpp::SubscriptionOptions subscription_options;
+      subscription_options.event_callbacks.liveliness_callback =
+        [](rclcpp::QOSLivelinessChangedInfo & event)
+        {
+          printf("Liveliness changed event: \n");
+          printf("  alive_count: %d\n", event.alive_count);
+          printf("  not_alive_count: %d\n", event.not_alive_count);
+          printf("  alive_count_change: %d\n", event.alive_count_change);
+          printf("  not_alive_count_change: %d\n", event.not_alive_count_change);
+        };
 #endif
 
       subscription_ = this->create_subscription<std_msgs::msg::String>(
-      "topic", qos_settings, std::bind(&MinimalSubscriber::topic_callback, this, _1));
+      "topic", qos_settings, std::bind(&MinimalSubscriber::topic_callback, this, _1), subscription_options);
     }
 
   private:

@@ -43,6 +43,7 @@ class MinimalPublisher : public rclcpp::Node
       qos_settings.lifespan(std::chrono::milliseconds(2000));
 #endif
 #if QOS_LIVELINESS
+      qos_settings.liveliness(RMW_QOS_POLICY_LIVELINESS_MANUAL_BY_TOPIC);
       qos_settings.liveliness_lease_duration(std::chrono::milliseconds(2000));
 #endif
 
