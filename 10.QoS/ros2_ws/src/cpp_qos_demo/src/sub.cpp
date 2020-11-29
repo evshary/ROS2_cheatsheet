@@ -12,6 +12,7 @@ class MinimalSubscriber : public rclcpp::Node
     {
       // Setting QoS
       rclcpp::QoS qos_settings(10); // history depth is 10
+      rclcpp::SubscriptionOptions sub_options;
 #define QOS_HISTORY      1
 #define QOS_RELIABILITY  1
 #define QOS_DURABILITY   1
@@ -33,6 +34,12 @@ class MinimalSubscriber : public rclcpp::Node
 #endif
 #if QOS_DEADLINE
       qos_settings.deadline(std::chrono::milliseconds(2000));
+
+      sub_options.event_callbacks.deadline_callback =
+        [](rclcpp::QOSDeadlineRequestedInfo & event) -> void
+        {
+          printf("Requested deadline missed: total %d delta %d\n", event.total_count, event.total_count_change);
+        };
 #endif
 #if QOS_LIFESPAN
       qos_settings.lifespan(std::chrono::milliseconds(2000));
@@ -41,8 +48,7 @@ class MinimalSubscriber : public rclcpp::Node
       qos_settings.liveliness(RMW_QOS_POLICY_LIVELINESS_MANUAL_BY_TOPIC);
       qos_settings.liveliness_lease_duration(std::chrono::milliseconds(2000));
 
-      rclcpp::SubscriptionOptions subscription_options;
-      subscription_options.event_callbacks.liveliness_callback =
+      sub_options.event_callbacks.liveliness_callback =
         [](rclcpp::QOSLivelinessChangedInfo & event)
         {
           printf("Liveliness changed event: \n");
@@ -53,8 +59,7 @@ class MinimalSubscriber : public rclcpp::Node
         };
 #endif
 
-      subscription_ = this->create_subscription<std_msgs::msg::String>(
-      "topic", qos_settings, std::bind(&MinimalSubscriber::topic_callback, this, _1), subscription_options);
+      subscription_ = this->create_subscription<std_msgs::msg::String>("topic", qos_settings, std::bind(&MinimalSubscriber::topic_callback, this, _1), sub_options);
     }
 
   private:

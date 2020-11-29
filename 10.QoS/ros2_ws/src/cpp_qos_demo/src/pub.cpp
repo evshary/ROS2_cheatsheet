@@ -17,6 +17,7 @@ class MinimalPublisher : public rclcpp::Node
     {
       // Setting QoS
       rclcpp::QoS qos_settings(10); // history depth is 10
+      rclcpp::PublisherOptions pub_options;
 #define QOS_HISTORY      1
 #define QOS_RELIABILITY  1
 #define QOS_DURABILITY   1
@@ -38,6 +39,12 @@ class MinimalPublisher : public rclcpp::Node
 #endif
 #if QOS_DEADLINE
       qos_settings.deadline(std::chrono::milliseconds(2000));
+
+      pub_options.event_callbacks.deadline_callback =
+        [](rclcpp::QOSDeadlineOfferedInfo & event) -> void
+        {
+          printf("Offered deadline missed: total %d delta %d\n", event.total_count, event.total_count_change);
+        };
 #endif
 #if QOS_LIFESPAN
       qos_settings.lifespan(std::chrono::milliseconds(2000));
@@ -47,7 +54,7 @@ class MinimalPublisher : public rclcpp::Node
       qos_settings.liveliness_lease_duration(std::chrono::milliseconds(2000));
 #endif
 
-      publisher_ = this->create_publisher<std_msgs::msg::String>("topic", qos_settings);
+      publisher_ = this->create_publisher<std_msgs::msg::String>("topic", qos_settings, pub_options);
       timer_ = this->create_wall_timer(
       500ms, std::bind(&MinimalPublisher::timer_callback, this));
     }
