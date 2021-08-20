@@ -14,11 +14,11 @@ class MinimalSubscriber : public rclcpp::Node
       rclcpp::QoS qos_settings(10); // history depth is 10
       rclcpp::SubscriptionOptions sub_options;
 #define QOS_HISTORY      1
-#define QOS_RELIABILITY  1
+#define QOS_RELIABILITY  0
 #define QOS_DURABILITY   1
-#define QOS_DEADLINE     1
-#define QOS_LIFESPAN     1
-#define QOS_LIVELINESS   1
+#define QOS_DEADLINE     0
+#define QOS_LIFESPAN     0
+#define QOS_LIVELINESS   0
 #if QOS_HISTORY
       // History
       qos_settings.keep_last(10);
