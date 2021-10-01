@@ -7,7 +7,7 @@ This example is used to test fork function with ROS 2.
 ```bash
 # Source ROS 2 foxy
 colcon build
-ros2 run fork_pkg fork_node
+ros2 run fork_pkg_py fork_node
 ```
 
 # Note

@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'fork_pkg'
+package_name = 'fork_pkg_py'
 
 setup(
     name=package_name,
@@ -20,7 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'fork_node = fork_pkg.fork_node:main'
+            'fork_node = fork_pkg_py.fork_node:main'
         ],
     },
 )

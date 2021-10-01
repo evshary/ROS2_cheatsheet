@@ -47,7 +47,7 @@ def parent():
     rclpy.shutdown()
 
 def main():
-    print('Hi from fork_pkg.')
+    print('Hi from fork_pkg_py.')
     pid = os.fork()
     if pid == 0:
         print("This is child")

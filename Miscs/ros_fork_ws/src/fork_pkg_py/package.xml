@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>fork_pkg</name>
+  <name>fork_pkg_py</name>
   <version>1.0.0</version>
   <description>TODO: Package description</description>
   <maintainer email="evshary@gmail.com">ChenYing Kuo</maintainer>
