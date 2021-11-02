@@ -19,6 +19,7 @@ The repo provides some ROS2 cheat-sheet.
 # Useful packages
 
 * [ROS 2 domain bridge](https://github.com/ros2/domain_bridge): How to bridge communication between different domains.
+* [RMF](https://osrf.github.io/ros2multirobotbook/): The framework proposed by OR for building your own fleet management system.
 
 # Reference
 
