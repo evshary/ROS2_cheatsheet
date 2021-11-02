@@ -16,6 +16,10 @@ The repo provides some ROS2 cheat-sheet.
 * [10. QoS](10.QoS): TODO
 * [11. Interface](11.Interface)
 
+# Useful packages
+
+* [ROS 2 domain bridge](https://github.com/ros2/domain_bridge): How to bridge communication between different domains.
+
 # Reference
 
 * [Discourse](https://discourse.ros.org/): The forum for ROS
