@@ -15,3 +15,8 @@ ros2 multicast receive
 # terminal 2
 ros2 multicast send
 ```
+
+# Tips
+
+* Show debug message
+  - ROS 1: Modify `$ROS_ROOT/config/rosconsole.config`
