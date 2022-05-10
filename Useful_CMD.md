@@ -15,3 +15,16 @@ ros2 multicast receive
 # terminal 2
 ros2 multicast send
 ```
+
+# Remapping
+
+* Remap:
+  - namespace to `/demo`
+  - node name to `my_talker`
+  - topic from `chatter` to `my_topic`
+
+```bash
+ros2 run demo_nodes_cpp talker --ros-args -r __ns:=/demo -r __node:=my_talker -r chatter:=my_topic
+```
+
+* [Passing ROS arguments to nodes via the command-line](https://docs.ros.org/en/foxy/How-To-Guides/Node-arguments.html)
