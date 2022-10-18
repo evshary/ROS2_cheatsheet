@@ -21,6 +21,12 @@ The repo provides some ROS2 cheat-sheet.
 * [ROS 2 domain bridge](https://github.com/ros2/domain_bridge): How to bridge communication between different domains.
 * [RMF](https://osrf.github.io/ros2multirobotbook/): The framework proposed by OR for building your own fleet management system.
 * [message filter example](https://github.com/Adlink-ROS/sensors_pkg): The package shows you how to use message filter.
+* [topic_tools](https://github.com/ros-tooling/topic_tools): Manipulate ROS 2 topic at a meta-level
+
+```bash
+# Topic relay: subscribe and then republish
+ros2 run topic_tools relay <origin_topic> <new_topic>
+```
 
 # Reference
 
