@@ -32,3 +32,14 @@ ros2 run demo_nodes_cpp talker --ros-args -r __ns:=/demo -r __node:=my_talker -r
 # Tips
 
 While running launch with failures, you can view the log from `~/.ros/log/`
+
+# FAQ
+
+* If you met `Failed to find a free participant index for domain 0` (while using `ROS_LOCALHOST_ONLY`)
+   - This is related to CycloneDDS. You can enable multicast on `lo`
+   - https://github.com/eclipse-cyclonedds/cyclonedds/issues/1400
+
+* If you met `action_exc: create_thread: action_exceptio: no free slot`
+   - This is due to CycloneDDS thread limitation
+   - https://github.com/ros2/rmw_cyclonedds/issues/268
+
