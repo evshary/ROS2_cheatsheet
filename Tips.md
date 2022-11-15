@@ -1,3 +1,5 @@
+# Tips
+
 # Enable multicast in loopback interface
 
 If you don't have network and can only use loopback network, you need to enable multicast on loopback interface.
@@ -29,7 +31,7 @@ ros2 run demo_nodes_cpp talker --ros-args -r __ns:=/demo -r __node:=my_talker -r
 
 * [Passing ROS arguments to nodes via the command-line](https://docs.ros.org/en/foxy/How-To-Guides/Node-arguments.html)
 
-# Tips
+# Log
 
 While running launch with failures, you can view the log from `~/.ros/log/`
 
