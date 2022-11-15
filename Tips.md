@@ -45,3 +45,9 @@ While running launch with failures, you can view the log from `~/.ros/log/`
    - This is due to CycloneDDS thread limitation
    - https://github.com/ros2/rmw_cyclonedds/issues/268
 
+* If you found that ROS 2 has strange behaviors, stop ROS 2 daemon
+
+```shell
+ros2 daemon stop
+ros2 daemon status
+```
