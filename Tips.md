@@ -34,6 +34,19 @@ ros2 run demo_nodes_cpp talker --ros-args -r __ns:=/demo -r __node:=my_talker -r
 
 While running launch with failures, you can view the log from `~/.ros/log/`
 
+# rosdep
+
+* If you want to use EOL ROS distribution
+
+```shell
+# Update all EOL distros
+rosdep update --include-eol-distros
+# Select the distro you want, e.g. galactic
+rosdep update --rosdistro=galactic
+# Also need to assign ROS distro while updating
+rosdep install -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO
+```
+
 # FAQ
 
 * If you met `Failed to find a free participant index for domain 0` (while using `ROS_LOCALHOST_ONLY`)
