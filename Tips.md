@@ -1,5 +1,14 @@
 # Tips
 
+# Developing
+
+Able to use autocomplete in vscode
+
+1. Download C/C++ plugins
+2. Compile with option: `colcon build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON`
+3. Link `compile_commands.json` to root folder: `ln -s ../build/compile_commands.json .`
+4. Restart vscode, and C/C++ plugin will ask you.
+
 # Enable multicast in loopback interface
 
 If you don't have network and can only use loopback network, you need to enable multicast on loopback interface.
