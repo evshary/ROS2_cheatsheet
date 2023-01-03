@@ -12,7 +12,8 @@ Use C++ autocomplete in vscode
 Use python autocomplete in vscode
 
 1. Download Python plugin
-2. Create .env file under the workspace with the content "PYTHONPATH=/opt/ros/galactic/lib/python3.8/site-packages"
+2. Create `.env` file under the workspace with the content `PYTHONPATH=/opt/ros/galactic/lib/python3.8/site-packages`
+  - You can source `install/setup.bash` and put your PYTHONPATH into `.env`
 
 # Enable multicast in loopback interface
 
