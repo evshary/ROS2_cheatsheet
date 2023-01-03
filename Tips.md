@@ -2,12 +2,17 @@
 
 # Developing
 
-Able to use autocomplete in vscode
+Use C++ autocomplete in vscode
 
 1. Download C/C++ plugins
 2. Compile with option: `colcon build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON`
 3. Link `compile_commands.json` to root folder: `ln -s ../build/compile_commands.json .`
 4. Restart vscode, and C/C++ plugin will ask you.
+
+Use python autocomplete in vscode
+
+1. Download Python plugin
+2. Create .env file under the workspace with the content "PYTHONPATH=/opt/ros/galactic/lib/python3.8/site-packages"
 
 # Enable multicast in loopback interface
 
